@@ -316,5 +316,16 @@ summary::-webkit-details-marker{display:none}
 </footer>
 
 </div>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]');
+  if(!a)return;
+  var el=document.getElementById(a.getAttribute('href').slice(1));
+  if(!el)return;
+  e.preventDefault();
+  el.scrollIntoView({behavior:'smooth'});
+});
+if(location.hash){history.replaceState(null,'',location.pathname+location.search);}
+</script>
 </body>
 </html>
